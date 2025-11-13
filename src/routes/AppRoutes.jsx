@@ -3,8 +3,8 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 
 import NotFound from "../pages/NotFound";
-import ManageColleges from "../pages/1superAdmin/ManageColleges";
-import CreateCollege from "../pages/1superAdmin/CreateCollege";
+import ManageColleges from "../pages/1MasterAdmin/ManageColleges";
+import CreateCollege from "../pages/1MasterAdmin/CreateCollege";
 import CollegeDashboard from "../pages/2CollegeAdmin/CollegeDashboard";
 import Departments from "../pages/2CollegeAdmin/departments";
 import Faculty from "../pages/2CollegeAdmin/faculty";
@@ -29,6 +29,14 @@ import HODPanel from "../pages/4Department/HODPanel";
 import TakeAttendance from "../pages/5Attendence/TakeAttendance";
 import ViewAttendance from "../pages/5Attendence/ViewAttendance";
 import AttendanceReports from "../pages/5Attendence/AttendanceReports";
+import SADepartments from "../pages/2CollegeAdmin/departments";
+import SuperAdminDashboard from "../pages/1superAdmin/SuperAdminDashboard";
+import StaffFacultyManagement from "../pages/1superAdmin/StaffFacultyManagement ";
+import DepartmentManagement from "../pages/1superAdmin/DepartmentManagement";
+import StudentOversight from "../pages/1superAdmin/StudentOversight";
+import Finance from "../pages/1superAdmin/Finance";
+import Examinations from "../pages/1superAdmin/Examinations";
+import Placements from "../pages/1superAdmin/Placements";
 
 const AppRoutes = () => {
   return (
@@ -41,9 +49,21 @@ const AppRoutes = () => {
 
       <Route path="*" element={<NotFound />} />
 
+      {/* Master Admin */}
+      <Route path="/master-admin/create-college" element={<CreateCollege />} />
+      <Route path="/master-admin/colleges" element={<ManageColleges />} />
+
       {/* Super Admin */}
-      <Route path="//superadmin/create-college" element={<CreateCollege />} />
-      <Route path="/superadmin/colleges" element={<ManageColleges />} />
+      <Route path="/superadmin/dashboard" element={<SuperAdminDashboard />} />
+      <Route
+        path="/superadmin/departments"
+        element={<DepartmentManagement />}
+      />
+      <Route path="/superadmin/faculty" element={<StaffFacultyManagement />} />
+      <Route path="/superadmin/students" element={<StudentOversight />} />
+      <Route path="/superadmin/finance" element={<Finance />} />
+      <Route path="/superadmin/exams" element={<Examinations />} />
+      <Route path="/superadmin/placements" element={<Placements />} />
 
       {/* College Admin Routes */}
       <Route path="/college/dashboard" element={<CollegeDashboard />} />

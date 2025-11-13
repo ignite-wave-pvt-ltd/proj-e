@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { collegeData } from "../../data/collegeData";
 
-const Departments = () => {
+const SADepartments = () => {
   const [departments, setDepartments] = useState(collegeData.departments);
   const [showForm, setShowForm] = useState(false);
   const [editingDept, setEditingDept] = useState(null);
@@ -413,4 +413,4 @@ const Departments = () => {
   );
 };
 
-export default Departments;
+export default SADepartments;
